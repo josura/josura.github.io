@@ -27,11 +27,32 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script>
+    function setup(){
+      var age = document.getElementById("myAge");
+      age.innerHTML = calculateAge();
+    }
+
+    function calculateAge(){
+      // The date of my birth
+      var birthDate = new Date(1998, 9, 11, 0, 0, 0, 0);
+
+      // The current date
+      var currentDate = new Date();
+
+      // age calculation
+      var age = currentDate.getFullYear() - birthDate.getFullYear();
+      return age;
+    }
+
+
+  </script>
+
   <!-- =======================================================
   ======================================================== -->
 </head>
 
-<body>
+<body onload="setup()">
 
   <!-- ======= Mobile nav toggle button ======= -->
   <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -95,7 +116,7 @@
                   <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> Work In Progress</li>
                   <!--<li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +39 3277934234</li>-->
                   <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : Catania, Italia</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 24</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> <span id="myAge"></span> </li>
                   <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Master in computer science</li>
                 </ul>
               </div>
