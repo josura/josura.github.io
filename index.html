@@ -34,18 +34,21 @@
     }
 
     function calculateAge(){
-      // The date of my birth
-      var birthDate = new Date(1998, 9, 11, 0, 0, 0, 0);
+      // The date of my birth (Year, Month Index 0-11, Day)
+      // September is index 8
+      var birthDate = new Date(1998, 8, 11, 0, 0, 0, 0);
 
       // The current date
       var currentDate = new Date();
 
       // age calculation
       var age = currentDate.getFullYear() - birthDate.getFullYear();
+      var m = currentDate.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && currentDate.getDate() < birthDate.getDate())) {
+          age--;
+      }
       return age;
     }
-
-
   </script>
 
   <!-- =======================================================
